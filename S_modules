@@ -1,0 +1,33 @@
+set.seed(seed, kind = NULL, normal.kind = NULL, sample.kind = NULL)
+
+rnorm(n, mean = 0, sd = 1)
+
+mean(x, …)
+
+sample(x, size, replace = FALSE, prob = NULL)
+
+t.test(x, …)
+# S3 method for default
+t.test(x, y = NULL,
+       alternative = c("two.sided", "less", "greater"),
+       mu = 0, paired = FALSE, var.equal = FALSE,
+       conf.level = 0.95, …)
+# S3 method for formula
+t.test(formula, data, subset, na.action, …)
+
+
+# 임의의 모집단 생성
+set.seed(1234)
+population <- rnorm(10000, 0, 1)
+
+# 모집단의 평균 확인
+mean(population)
+
+# 모집단으로부터 표본 추출
+set.seed(1234)
+data <- sample(population, 100)
+# 표본집단의 평균 확인
+mean(data)
+
+# 단일 표본 t 검정
+t.test(data, mu=0)
